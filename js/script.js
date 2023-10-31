@@ -77,8 +77,6 @@ const slider = () => {
   }
   dot[currentIndex].style.backgroundColor = "wheat";
   slide[currentIndex].style.display = "block";
-
-  
 };
 
  slider();
@@ -92,4 +90,14 @@ imgSlider.addEventListener('mouseenter', () => {
 imgSlider.addEventListener('mouseleave', () => {   
     next.style.display = 'none'
     prev.style.display = 'none'
+}) 
+
+dot.forEach((dots, index) => {
+    dots.addEventListener('click', () => {
+        dot[currentIndex].style.backgroundColor = "transparent";
+  slide[currentIndex].style.display = "none";
+      currentIndex = index
+      dot[currentIndex].style.backgroundColor = "wheat";
+  slide[currentIndex].style.display = "block";
+    })
 }) 
