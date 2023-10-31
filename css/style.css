@@ -42,7 +42,7 @@ header {
   transform: scaleY(0);
   transform-origin: top;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
 }
 
 .nav-links .links {
@@ -74,19 +74,20 @@ header {
   border-top-right-radius: 10px;
   width: 25%;
   padding: 30px 0;
+  z-index: 1;
 }
 
 .mobile-menu .menu-list {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .mobile-menu .menu-item {
-    padding: 20px;
+  padding: 20px;
 }
 .mobile.visible {
-    position: absolute;
-    left: 0;
-    transform: scaleX(1);
+  position: absolute;
+  left: 0;
+  transform: scaleX(1);
 }
 .hidden {
   position: absolute;
@@ -95,4 +96,74 @@ header {
 
 .nav-links.visible {
   position: static;
+}
+
+.slider {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  height: 70vh;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  max-height: 100%;
+}
+
+.next {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.prev {
+  position: absolute;
+  left: 30px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  background-color: transparent;
+}
+.next button:hover, .prev button:hover {
+  background-color: rgba(red, green, blue, alpha);
+  padding: 5px 10px;
+  font-size: 3rem;
+}
+
+.dots {
+  display: flex;
+  position: absolute;
+  gap: 15px;
+  bottom: 15px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 2px solid wheat;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }

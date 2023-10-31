@@ -34,3 +34,31 @@ dropDown.forEach((drop, index) => {
 });
 
 toggler(menu, [mobile], "visible", "click", 0);
+
+const slide = document.querySelectorAll(".slide");
+const dot = document.querySelectorAll(".dot");
+const btn = document.querySelector(".next");
+let currentIndex = 0;
+
+slide[currentIndex].style.display = "block";
+dot[currentIndex].style.backgroundColor = "wheat";
+
+btn.addEventListener("click", () => {
+  slider();
+});
+
+const slider = () => {
+  dot[currentIndex].style.backgroundColor = "transparent";
+  slide[currentIndex].style.display = "none";
+  currentIndex++;
+
+  if (currentIndex >= slide.length) {
+    currentIndex = 0;
+  }
+  dot[currentIndex].style.backgroundColor = "wheat";
+  slide[currentIndex].style.display = "block";
+
+  setTimeout(slider, 3000);
+};
+
+// slider();
