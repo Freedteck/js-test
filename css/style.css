@@ -116,6 +116,35 @@ img {
   height: 100%;
 }
 
+.next {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+#prev, #next {
+    font-size: 3rem;
+    display: none;
+    color: white;    
+}
+.prev {
+  position: absolute;
+  left: 30px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  background-color: transparent;
+}
+
+#next:hover, #prev:hover {
+    background-color: #333;
+    padding: 10px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    text-align: center;5px;
+}
 .dots {
   display: flex;
   position: absolute;

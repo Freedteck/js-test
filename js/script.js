@@ -38,12 +38,21 @@ toggler(menu, [mobile], "visible", "click", 0);
 const imgSlider = document.querySelector(".slider");
 const slide = document.querySelectorAll(".slide");
 const dot = document.querySelectorAll(".dot");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 const next = document.getElementById('next')
 
 let currentIndex = 0;
 
 slide[currentIndex].style.display = "block";
 dot[currentIndex].style.backgroundColor = "wheat";
+
+nextBtn.addEventListener("click", () => {
+  slider();
+});
+prevBtn.addEventListener("click", () => {
+  back();
+});
 
 const slider = () => {
   dot[currentIndex].style.backgroundColor = "transparent";
@@ -56,9 +65,9 @@ const slider = () => {
   dot[currentIndex].style.backgroundColor = "wheat";
   slide[currentIndex].style.display = "block";
   
-  setTimeout(slider, 3000)
+  setTimeout(slider, 5000)
 };
-/* const back = () => {
+ const back = () => {
   dot[currentIndex].style.backgroundColor = "transparent";
   slide[currentIndex].style.display = "none";
   currentIndex--;
@@ -71,5 +80,16 @@ const slider = () => {
 
   
 };
- */
+
  slider();
+
+prev.textContent = '<'
+next.textContent = '>'
+imgSlider.addEventListener('mouseenter', () => { 
+    next.style.display = 'block'
+    prev.style.display = 'block'
+})
+imgSlider.addEventListener('mouseleave', () => {   
+    next.style.display = 'none'
+    prev.style.display = 'none'
+}) 
