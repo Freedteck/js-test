@@ -113,28 +113,7 @@ header {
 
 img {
   width: 100%;
-  max-height: 100%;
-}
-
-.next {
-  position: absolute;
-  right: 30px;
-  display: flex;
   height: 100%;
-  align-items: center;
-}
-.prev {
-  position: absolute;
-  left: 30px;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  background-color: transparent;
-}
-.next button:hover, .prev button:hover {
-  background-color: rgba(red, green, blue, alpha);
-  padding: 5px 10px;
-  font-size: 3rem;
 }
 
 .dots {

@@ -35,17 +35,15 @@ dropDown.forEach((drop, index) => {
 
 toggler(menu, [mobile], "visible", "click", 0);
 
+const imgSlider = document.querySelector(".slider");
 const slide = document.querySelectorAll(".slide");
 const dot = document.querySelectorAll(".dot");
-const btn = document.querySelector(".next");
+const next = document.getElementById('next')
+
 let currentIndex = 0;
 
 slide[currentIndex].style.display = "block";
 dot[currentIndex].style.backgroundColor = "wheat";
-
-btn.addEventListener("click", () => {
-  slider();
-});
 
 const slider = () => {
   dot[currentIndex].style.backgroundColor = "transparent";
@@ -57,8 +55,21 @@ const slider = () => {
   }
   dot[currentIndex].style.backgroundColor = "wheat";
   slide[currentIndex].style.display = "block";
-
-  setTimeout(slider, 3000);
+  
+  setTimeout(slider, 3000)
 };
+/* const back = () => {
+  dot[currentIndex].style.backgroundColor = "transparent";
+  slide[currentIndex].style.display = "none";
+  currentIndex--;
 
-// slider();
+  if (currentIndex < 0) {
+    currentIndex = slide.length - 1;
+  }
+  dot[currentIndex].style.backgroundColor = "wheat";
+  slide[currentIndex].style.display = "block";
+
+  
+};
+ */
+ slider();
